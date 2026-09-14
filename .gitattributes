@@ -1,0 +1,2 @@
+# Keep LF in the workflow: its run: block is executed by bash on the runner.
+* text=auto eol=lf

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="288" viewBox="0 0 1000 288" role="img" aria-label="Manjunath Janardhan: on-device AI scale rail with live GitHub readouts">
+<title>Manjunath Janardhan: on-device AI scale rail with live GitHub readouts</title>
+<rect width="1000" height="288" rx="10" fill="#0b0f14"/>
+<text x="64" y="58" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="25" font-weight="600" fill="#e6edf3" text-anchor="start">Manjunath Janardhan</text>
+<text x="64" y="82" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="13" font-weight="400" fill="#7d8da1" text-anchor="start">AI/ML Sr Manager @ Accenture  ·  GenAI, agentic systems, enterprise AI</text>
+<text x="64" y="108" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="13" font-weight="400" fill="#4dd0c1" text-anchor="start">I keep asking how little hardware a working model actually needs.</text>
+<line x1="64" y1="168" x2="936" y2="168" stroke="#1e2b38" stroke-width="2"/>
+<text x="64" y="272" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="10" font-weight="400" fill="#4e5d6e" text-anchor="start" letter-spacing="1.6">parameters</text>
+<text x="936" y="272" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="10" font-weight="400" fill="#4e5d6e" text-anchor="end" letter-spacing="1.6">cloud</text>
+<line x1="145.3" y1="159" x2="145.3" y2="177" stroke="#e8a33d" stroke-width="2"/>
+<circle cx="145.3" cy="168" r="4.5" fill="#0b0f14" stroke="#e8a33d" stroke-width="2"/>
+<text x="145.3" y="147" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="15" font-weight="600" fill="#e8a33d" text-anchor="middle">312 K</text>
+<text x="64" y="199" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#e6edf3" text-anchor="start">esp32-gpio-llm</text>
+<text x="64" y="215" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#7d8da1" text-anchor="start">english to GPIO, $8 ESP32-S3, no radio</text>
+<line x1="468.8" y1="222" x2="468.8" y2="233" stroke="#4dd0c1" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="468.8" y1="159" x2="468.8" y2="177" stroke="#4dd0c1" stroke-width="2"/>
+<circle cx="468.8" cy="168" r="4.5" fill="#0b0f14" stroke="#4dd0c1" stroke-width="2"/>
+<text x="468.8" y="147" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="15" font-weight="600" fill="#4dd0c1" text-anchor="middle">28.9 M</text>
+<text x="468.8" y="242" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#e6edf3" text-anchor="middle">esp32-tinyllm</text>
+<text x="468.8" y="258" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#7d8da1" text-anchor="middle">per-layer embeddings, 25M in flash</text>
+<line x1="800.5" y1="159" x2="800.5" y2="177" stroke="#7c9cf5" stroke-width="2"/>
+<circle cx="800.5" cy="168" r="4.5" fill="#0b0f14" stroke="#7c9cf5" stroke-width="2"/>
+<text x="800.5" y="147" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="15" font-weight="600" fill="#7c9cf5" text-anchor="middle">~3 B</text>
+<text x="800.5" y="199" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#e6edf3" text-anchor="middle">fmx</text>
+<text x="800.5" y="215" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#7d8da1" text-anchor="middle">Apple's on-device model, one CLI call</text>
+<line x1="861.0" y1="222" x2="861.0" y2="233" stroke="#d96ab0" stroke-width="1" stroke-opacity="0.5"/>
+<line x1="861.0" y1="159" x2="861.0" y2="177" stroke="#d96ab0" stroke-width="2"/>
+<circle cx="861.0" cy="168" r="4.5" fill="#0b0f14" stroke="#d96ab0" stroke-width="2"/>
+<text x="861.0" y="147" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="15" font-weight="600" fill="#d96ab0" text-anchor="middle">7 B +</text>
+<text x="936" y="242" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#e6edf3" text-anchor="end">turboquant-mlx</text>
+<text x="936" y="258" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="9.5" font-weight="400" fill="#7d8da1" text-anchor="end">weight + KV compression, Apple Silicon</text>
+<text x="936" y="62" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="24" font-weight="600" fill="#e6edf3" text-anchor="end">14</text>
+<text x="936" y="80" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#7d8da1" text-anchor="end" letter-spacing="0.8">in review</text>
+<text x="800" y="62" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="24" font-weight="600" fill="#e6edf3" text-anchor="end">18</text>
+<text x="800" y="80" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#7d8da1" text-anchor="end" letter-spacing="0.8">merged upstream</text>
+<text x="664" y="62" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="24" font-weight="600" fill="#e6edf3" text-anchor="end">146</text>
+<text x="664" y="80" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10" font-weight="400" fill="#7d8da1" text-anchor="end" letter-spacing="0.8">stars</text>
+<text x="936" y="108" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="9.5" font-weight="400" fill="#4e5d6e" text-anchor="end">regenerated 2026-09-14 · hand-built SVG</text>
+<rect x="0.5" y="0.5" width="999" height="287" rx="9.5" fill="none" stroke="#1e2b38"/>
+</svg>
