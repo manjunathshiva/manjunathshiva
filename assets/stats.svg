@@ -7,11 +7,11 @@
 <text x="22" y="123" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#7d8da1" text-anchor="start">stars earned</text>
 <text x="226" y="104" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="30" font-weight="600" fill="#4dd0c1" text-anchor="start">28</text>
 <text x="226" y="123" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#7d8da1" text-anchor="start">public repos</text>
-<text x="22" y="178" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="30" font-weight="600" fill="#7c9cf5" text-anchor="start">231</text>
+<text x="22" y="178" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="30" font-weight="600" fill="#7c9cf5" text-anchor="start">234</text>
 <text x="22" y="197" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#7d8da1" text-anchor="start">commits, 12 mo</text>
-<text x="226" y="178" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="30" font-weight="600" fill="#d96ab0" text-anchor="start">19</text>
+<text x="226" y="178" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="30" font-weight="600" fill="#d96ab0" text-anchor="start">22</text>
 <text x="226" y="197" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif" font-size="10.5" font-weight="400" fill="#7d8da1" text-anchor="start">upstream merged</text>
 <line x1="22" y1="194" x2="408" y2="194" stroke="#1e2b38"/>
-<text x="22" y="216" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="10.5" font-weight="400" fill="#4e5d6e" text-anchor="start">435 contributions · 52 followers</text>
+<text x="22" y="216" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="10.5" font-weight="400" fill="#4e5d6e" text-anchor="start">440 contributions · 52 followers</text>
 <rect x="0.5" y="0.5" width="429" height="237" rx="9.5" fill="none" stroke="#1e2b38"/>
 </svg>
