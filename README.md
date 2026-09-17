@@ -65,37 +65,42 @@ A preserved mirror of Microsoft's removed repo-exploration subagent ([arXiv 2606
 
 I go after the bugs that survive code review because everything still *looks* fine: a conversion boundary that silently drops a field. A good share of what's below is that same bug wearing different clothes — and each fix ships with the regression test that keeps it dead.
 
-**merged — 18 upstream**
+<!-- upstream:start -->
+**merged — 24 upstream**
 
 | project | what shipped | pr |
 |---|---|---|
+| **microsoft/agent-framework** | keep agent compaction config when `HandoffBuilder` clones participants | [#8329](https://github.com/microsoft/agent-framework/pull/8329) |
+| **microsoft/agent-framework** | parse Responses `function_call_output` so hosted tool results survive | [#8078](https://github.com/microsoft/agent-framework/pull/8078) |
+| **microsoft/agent-framework** | make concurrent `FileCheckpointStorage` saves stop racing | [#7757](https://github.com/microsoft/agent-framework/pull/7757) |
+| **microsoft/agent-framework** | keep cached + reasoning token counts through Foundry hosting | [#8334](https://github.com/microsoft/agent-framework/pull/8334) |
+| **ag-ui-protocol/ag-ui** | give .NET clients typed access to AG-UI client state | [#2752](https://github.com/ag-ui-protocol/ag-ui/pull/2752) |
+| **microsoft/agent-framework** | keep AG-UI workflow reasoning in thread snapshots | [#8058](https://github.com/microsoft/agent-framework/pull/8058) |
 | **microsoft/agent-framework** | register built-in orchestration types so checkpoint restore stops failing | [#8258](https://github.com/microsoft/agent-framework/pull/8258) |
+| **microsoft/agent-framework** | stop dropping URL query parameters in the default HTTP request handler | [#7765](https://github.com/microsoft/agent-framework/pull/7765) |
 | **microsoft/agent-framework** | preserve tool call/result ordering when AG-UI splits a message | [#8005](https://github.com/microsoft/agent-framework/pull/8005) |
 | **microsoft/agent-framework** | surface AG-UI workflow intermediate events as reasoning | [#8003](https://github.com/microsoft/agent-framework/pull/8003) |
 | **microsoft/agent-framework** | keep parallel `function_result` contents through AG-UI conversion | [#7980](https://github.com/microsoft/agent-framework/pull/7980) |
 | **microsoft/agent-framework** | forward `function_invocation_kwargs` from DevUI to the agent | [#7779](https://github.com/microsoft/agent-framework/pull/7779) |
-| **microsoft/agent-framework** | stop dropping URL query parameters in the default HTTP request handler | [#7765](https://github.com/microsoft/agent-framework/pull/7765) |
 | **microsoft/agent-framework** | preserve agent `additional_properties` when `HandoffBuilder` clones | [#7755](https://github.com/microsoft/agent-framework/pull/7755) |
-| **langchain-ai/langchain** | default `GITLAB_URL` to gitlab.com instead of raising | [#14638](https://github.com/langchain-ai/langchain/pull/14638) |
-| **NVIDIA/GenerativeAIExamples** | fix the `ModelFilter` ImportError that broke the examples on new `huggingface_hub` | [#208](https://github.com/NVIDIA/GenerativeAIExamples/pull/208) |
 | **PrismML-Eng/Bonsai** | auto-fall back to MLX when a GGUF build is absent, instead of dying | [#123](https://github.com/PrismML-Eng/Bonsai-demo/pull/123) · [#126](https://github.com/PrismML-Eng/Bonsai-demo/pull/126) |
+| **NVIDIA/GenerativeAIExamples** | fix the `ModelFilter` ImportError that broke the examples on new `huggingface_hub` | [#208](https://github.com/NVIDIA/GenerativeAIExamples/pull/208) |
 | **neo4j-graphacademy** | fix the wrong `fulltext_index_name` in the GraphRAG hybrid retriever | [#6](https://github.com/neo4j-graphacademy/genai-workshop-graphrag/pull/6) |
+| **langchain-ai/langchain** | default `GITLAB_URL` to gitlab.com instead of raising | [#14638](https://github.com/langchain-ai/langchain/pull/14638) |
 
-<sub>plus six smaller docs, README and dependency fixes across <a href="https://github.com/NVIDIA/GenerativeAIExamples/pulls?q=is%3Apr+author%3Amanjunathshiva">NVIDIA/GenerativeAIExamples</a>, <a href="https://github.com/collabnix/dockerbangalore/pull/68">collabnix</a> and <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3AAIAnytime">AIAnytime</a>.</sub>
+<sub>plus six smaller docs, README and dependency fixes across <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3ANVIDIA">NVIDIA/GenerativeAIExamples</a>, <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3AAIAnytime">AIAnytime</a> and <a href="https://github.com/collabnix/dockerbangalore/pull/68">collabnix/dockerbangalore</a>.</sub>
 
-**in review — 14 signals out**
+**in review — 11 signals out**
 
 | project | what i shipped | pr |
 |---|---|---|
-| **microsoft/agent-framework** | keep cached + reasoning token counts through Foundry hosting | [#8334](https://github.com/microsoft/agent-framework/pull/8334) |
-| **microsoft/agent-framework** | keep agent compaction config when `HandoffBuilder` clones participants | [#8329](https://github.com/microsoft/agent-framework/pull/8329) |
-| **microsoft/agent-framework** | parse Responses `function_call_output` so hosted tool results survive | [#8078](https://github.com/microsoft/agent-framework/pull/8078) |
-| **microsoft/agent-framework** | keep AG-UI workflow reasoning in thread snapshots | [#8058](https://github.com/microsoft/agent-framework/pull/8058) |
-| **microsoft/agent-framework** | make concurrent `FileCheckpointStorage` saves stop racing | [#7757](https://github.com/microsoft/agent-framework/pull/7757) |
+| **ag-ui-protocol/ag-ui** | use the canonical A2UI v0.9 basic catalog ID in .NET | [#2771](https://github.com/ag-ui-protocol/ag-ui/pull/2771) |
+| **microsoft/agent-framework** | consolidate in-memory agent session storage in .NET | [#8417](https://github.com/microsoft/agent-framework/pull/8417) |
 | **microsoft/agent-framework** | validate declarative message properties; tighten strict skill script schemas | [#8119](https://github.com/microsoft/agent-framework/pull/8119) · [#8120](https://github.com/microsoft/agent-framework/pull/8120) |
-| **google-research/tabfm** | cast float64 targets before the device move; ship the `safetensors` extra | [#74](https://github.com/google-research/tabfm/pull/74) · [#75](https://github.com/google-research/tabfm/pull/75) |
 | **MicrosoftDocs/azure-ai-docs** | clarify declarative workflow response events | [#838](https://github.com/MicrosoftDocs/azure-ai-docs/pull/838) |
+| **google-research/tabfm** | cast float64 targets before the device move; ship the `safetensors` extra | [#74](https://github.com/google-research/tabfm/pull/74) · [#75](https://github.com/google-research/tabfm/pull/75) |
 | **ibm-self-serve-assets/SuperKnowa** | repair the PDF retriever notebooks | [#22](https://github.com/ibm-self-serve-assets/SuperKnowa/pull/22) · [#23](https://github.com/ibm-self-serve-assets/SuperKnowa/pull/23) |
+<!-- upstream:end -->
 
 ## 03 · bench
 

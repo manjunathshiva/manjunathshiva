@@ -1,8 +1,9 @@
-"""Regenerate the profile README cards from public GitHub data.
+"""Regenerate the profile README cards and upstream tables from public GitHub data.
 
 Every card on the profile is a static SVG committed to this repo, so there is no
 third-party widget to rate-limit me, rot, or track whoever visits the page. This
-script is the only thing that writes to assets/.
+script is the only thing that writes to assets/, and the only thing that writes
+between the upstream markers in README.md -- edit scripts/upstream.json instead.
 
 Run:  GH_TOKEN=<token> python scripts/gen_stats.py
 """
@@ -12,6 +13,7 @@ from __future__ import annotations
 import json
 import math
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -21,7 +23,11 @@ from pathlib import Path
 
 LOGIN = os.environ.get("PROFILE_LOGIN", "manjunathshiva")
 API = "https://api.github.com/graphql"
-ASSETS = Path(__file__).resolve().parent.parent / "assets"
+ROOT = Path(__file__).resolve().parent.parent
+ASSETS = ROOT / "assets"
+README = ROOT / "README.md"
+UPSTREAM = Path(__file__).resolve().parent / "upstream.json"
+START, END = "<!-- upstream:start -->", "<!-- upstream:end -->"
 
 # A dark card surface keeps every card legible in both of GitHub's themes --
 # the page never learns which one the visitor picked, so the cards cannot adapt.
@@ -67,6 +73,20 @@ query($login: String!) {
 }
 """
 
+PR_QUERY = """
+query($q: String!, $after: String) {
+  search(query: $q, type: ISSUE, first: 100, after: $after) {
+    pageInfo { hasNextPage endCursor }
+    nodes {
+      ... on PullRequest {
+        number title url createdAt mergedAt
+        repository { nameWithOwner }
+      }
+    }
+  }
+}
+"""
+
 # Real parameter counts, each against the hardware it actually runs on. Update
 # this table when a new repo moves the low end of the rail.
 RAIL = [
@@ -99,9 +119,11 @@ class Stats:
     week_starts: list[str]
 
 
-def graphql(token: str) -> dict:
-    query = QUERY.replace("LOGIN", LOGIN)
-    body = json.dumps({"query": query, "variables": {"login": LOGIN}}).encode()
+def graphql(token: str, query: str | None = None, variables: dict | None = None) -> dict:
+    if query is None:
+        query = QUERY.replace("LOGIN", LOGIN)
+        variables = {"login": LOGIN}
+    body = json.dumps({"query": query, "variables": variables}).encode()
     req = urllib.request.Request(
         API,
         data=body,
@@ -391,6 +413,104 @@ def trace_card(stats: Stats) -> str:
     return card(width, height, parts, "Weekly contribution trace over the last 52 weeks")
 
 
+@dataclass
+class PR:
+    key: str  # owner/repo#number, the id upstream.json uses
+    repo: str
+    number: int
+    title: str
+    url: str
+    created: str
+    merged: str | None
+
+
+def search_prs(token: str, state: str) -> list[PR]:
+    q = f"is:pr author:{LOGIN} is:{state} -user:{LOGIN}"
+    prs, after = [], None
+    while True:
+        page = graphql(token, PR_QUERY, {"q": q, "after": after})["search"]
+        for node in page["nodes"]:
+            repo = node["repository"]["nameWithOwner"]
+            prs.append(PR(f"{repo}#{node['number']}", repo, node["number"], node["title"],
+                          node["url"], node["createdAt"], node["mergedAt"]))
+        if not page["pageInfo"]["hasNextPage"]:
+            return prs
+        after = page["pageInfo"]["endCursor"]
+
+
+def caption(title: str) -> str:
+    """Fallback copy for a PR upstream.json doesn't describe yet: its own title,
+    minus the 'Python: fix:'-style prefixes, in the table's lower-case voice."""
+    title = re.sub(r"^(\s*(\[[^\]]*\]|[\w.]+(\([^)]*\))?:)\s*)+", "", title).strip()
+    return (title[:1].lower() + title[1:]).replace("|", "\\|")
+
+
+NUMBERS = "zero one two three four five six seven eight nine ten eleven twelve".split()
+
+
+def upstream_tables(merged: list[PR], open_: list[PR], copy: dict) -> str:
+    live = {pr.key: pr for pr in merged + open_}
+    projects = copy.get("projects", {})
+    minor = set(copy.get("minor", []))
+
+    rows, claimed = [], set()
+    for row in copy.get("rows", []):
+        prs = [live[key] for key in row["prs"] if key in live]  # closed unmerged: gone
+        claimed.update(row["prs"])
+        if prs:
+            rows.append((prs, row["text"]))
+    for pr in merged + open_:
+        if pr.key not in claimed and pr.key not in minor:
+            print(f"upstream.json has no line for {pr.key}: {pr.title}", file=sys.stderr)
+            rows.append(([pr], caption(pr.title)))
+
+    def table(heading: str, verb: str, picked: list) -> list[str]:
+        lines = [heading, "", f"| project | {verb} | pr |", "|---|---|---|"]
+        for prs, blurb in picked:
+            repo = prs[0].repo
+            links = " · ".join(f"[#{pr.number}]({pr.url})" for pr in prs)
+            lines.append(f"| **{projects.get(repo, repo)}** | {blurb} | {links} |")
+        return lines
+
+    # A row stays in review until every PR in it has landed; newest activity first.
+    done = [r for r in rows if all(pr.merged for pr in r[0])]
+    pending = [r for r in rows if not all(pr.merged for pr in r[0])]
+    done.sort(key=lambda r: max(pr.merged for pr in r[0]), reverse=True)
+    pending.sort(key=lambda r: max(pr.created for pr in r[0]), reverse=True)
+
+    lines = table(f"**merged — {len(merged)} upstream**", "what shipped", done)
+    small = [pr for pr in merged if pr.key in minor]
+    if small:
+        owners: dict[str, list[PR]] = {}
+        for pr in sorted(small, key=lambda pr: pr.key.lower()):
+            owners.setdefault(pr.repo.split("/")[0], []).append(pr)
+        links = []
+        for owner, prs in sorted(owners.items(), key=lambda kv: (-len(kv[1]), kv[0].lower())):
+            repos = {pr.repo for pr in prs}
+            name = prs[0].repo if len(repos) == 1 else owner
+            href = (prs[0].url if len(prs) == 1 else
+                    f"https://github.com/pulls?q=is%3Apr+author%3A{LOGIN}+org%3A{owner}")
+            links.append(f'<a href="{href}">{name}</a>')
+        across = links[0] if len(links) == 1 else ", ".join(links[:-1]) + " and " + links[-1]
+        count = NUMBERS[len(small)] if len(small) < len(NUMBERS) else str(len(small))
+        lines += ["", f"<sub>plus {count} smaller docs, README and dependency fixes "
+                      f"across {across}.</sub>"]
+    lines += [""] + table(f"**in review — {len(open_)} signals out**", "what i shipped", pending)
+    return "\n".join(lines)
+
+
+def write_readme(tables: str) -> None:
+    raw = README.read_bytes().decode("utf-8")
+    newline = "\r\n" if "\r\n" in raw else "\n"  # the README is committed with CRLF
+    start, end = raw.find(START), raw.find(END)
+    if start < 0 or end < start:
+        raise SystemExit(f"README.md is missing the {START} / {END} markers")
+    body = tables.replace("\n", newline)
+    raw = raw[:start + len(START)] + newline + body + newline + raw[end:]
+    README.write_bytes(raw.encode("utf-8"))
+    print("wrote README.md upstream tables")
+
+
 def main() -> int:
     token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
     if not token:
@@ -398,6 +518,7 @@ def main() -> int:
         return 1
     try:
         data = graphql(token)
+        merged, open_ = search_prs(token, "merged"), search_prs(token, "open")
     except urllib.error.HTTPError as exc:
         print(f"GitHub API returned {exc.code}: {exc.read()[:300]!r}", file=sys.stderr)
         return 1
@@ -412,6 +533,8 @@ def main() -> int:
     ]:
         (ASSETS / filename).write_text(svg + "\n", encoding="utf-8")
         print(f"wrote assets/{filename}")
+    copy = json.loads(UPSTREAM.read_text(encoding="utf-8"))
+    write_readme(upstream_tables(merged, open_, copy))
     return 0
 
 

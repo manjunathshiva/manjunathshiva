@@ -1,0 +1,42 @@
+{
+  "_readme": "Hand-written copy for the README's upstream tables. Merged/open state, counts and ordering come from GitHub on every run; this file only says how a PR is described. A PR not listed here still appears, captioned with its own title, and the run log names it so a line can be added. PRs sharing a row are listed together; 'minor' PRs are folded into the footnote when merged and left out while open.",
+  "projects": {
+    "PrismML-Eng/Bonsai-demo": "PrismML-Eng/Bonsai",
+    "neo4j-graphacademy/genai-workshop-graphrag": "neo4j-graphacademy"
+  },
+  "rows": [
+    {"prs": ["microsoft/agent-framework#8258"], "text": "register built-in orchestration types so checkpoint restore stops failing"},
+    {"prs": ["microsoft/agent-framework#8005"], "text": "preserve tool call/result ordering when AG-UI splits a message"},
+    {"prs": ["microsoft/agent-framework#8003"], "text": "surface AG-UI workflow intermediate events as reasoning"},
+    {"prs": ["microsoft/agent-framework#7980"], "text": "keep parallel `function_result` contents through AG-UI conversion"},
+    {"prs": ["microsoft/agent-framework#7779"], "text": "forward `function_invocation_kwargs` from DevUI to the agent"},
+    {"prs": ["microsoft/agent-framework#7765"], "text": "stop dropping URL query parameters in the default HTTP request handler"},
+    {"prs": ["microsoft/agent-framework#7755"], "text": "preserve agent `additional_properties` when `HandoffBuilder` clones"},
+    {"prs": ["microsoft/agent-framework#8334"], "text": "keep cached + reasoning token counts through Foundry hosting"},
+    {"prs": ["microsoft/agent-framework#8329"], "text": "keep agent compaction config when `HandoffBuilder` clones participants"},
+    {"prs": ["microsoft/agent-framework#8078"], "text": "parse Responses `function_call_output` so hosted tool results survive"},
+    {"prs": ["microsoft/agent-framework#8058"], "text": "keep AG-UI workflow reasoning in thread snapshots"},
+    {"prs": ["microsoft/agent-framework#7757"], "text": "make concurrent `FileCheckpointStorage` saves stop racing"},
+    {"prs": ["microsoft/agent-framework#8119", "microsoft/agent-framework#8120"], "text": "validate declarative message properties; tighten strict skill script schemas"},
+    {"prs": ["microsoft/agent-framework#8417"], "text": "consolidate in-memory agent session storage in .NET"},
+    {"prs": ["ag-ui-protocol/ag-ui#2752"], "text": "give .NET clients typed access to AG-UI client state"},
+    {"prs": ["ag-ui-protocol/ag-ui#2771"], "text": "use the canonical A2UI v0.9 basic catalog ID in .NET"},
+    {"prs": ["langchain-ai/langchain#14638"], "text": "default `GITLAB_URL` to gitlab.com instead of raising"},
+    {"prs": ["NVIDIA/GenerativeAIExamples#208"], "text": "fix the `ModelFilter` ImportError that broke the examples on new `huggingface_hub`"},
+    {"prs": ["PrismML-Eng/Bonsai-demo#123", "PrismML-Eng/Bonsai-demo#126"], "text": "auto-fall back to MLX when a GGUF build is absent, instead of dying"},
+    {"prs": ["neo4j-graphacademy/genai-workshop-graphrag#6"], "text": "fix the wrong `fulltext_index_name` in the GraphRAG hybrid retriever"},
+    {"prs": ["google-research/tabfm#74", "google-research/tabfm#75"], "text": "cast float64 targets before the device move; ship the `safetensors` extra"},
+    {"prs": ["MicrosoftDocs/azure-ai-docs#838"], "text": "clarify declarative workflow response events"},
+    {"prs": ["ibm-self-serve-assets/SuperKnowa#22", "ibm-self-serve-assets/SuperKnowa#23"], "text": "repair the PDF retriever notebooks"}
+  ],
+  "minor": [
+    "NVIDIA/GenerativeAIExamples#210",
+    "NVIDIA/GenerativeAIExamples#211",
+    "NVIDIA/GenerativeAIExamples#213",
+    "collabnix/dockerbangalore#68",
+    "AIAnytime/Chat-with-PDF-Chatbot#5",
+    "AIAnytime/Llama2-Medical-Chatbot#9",
+    "Olney1/ChatGPT-OpenAI-Smart-Speaker#13",
+    "wenqiglantz/llamaindex-metadata-financial-reports#1"
+  ]
+}
