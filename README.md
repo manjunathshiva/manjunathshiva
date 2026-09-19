@@ -66,10 +66,11 @@ A preserved mirror of Microsoft's removed repo-exploration subagent ([arXiv 2606
 I go after the bugs that survive code review because everything still *looks* fine: a conversion boundary that silently drops a field. A good share of what's below is that same bug wearing different clothes — and each fix ships with the regression test that keeps it dead.
 
 <!-- upstream:start -->
-**merged — 24 upstream**
+**merged — 25 upstream**
 
 | project | what shipped | pr |
 |---|---|---|
+| **MicrosoftDocs/azure-ai-docs** | clarify declarative workflow response events | [#838](https://github.com/MicrosoftDocs/azure-ai-docs/pull/838) |
 | **microsoft/agent-framework** | keep agent compaction config when `HandoffBuilder` clones participants | [#8329](https://github.com/microsoft/agent-framework/pull/8329) |
 | **microsoft/agent-framework** | parse Responses `function_call_output` so hosted tool results survive | [#8078](https://github.com/microsoft/agent-framework/pull/8078) |
 | **microsoft/agent-framework** | make concurrent `FileCheckpointStorage` saves stop racing | [#7757](https://github.com/microsoft/agent-framework/pull/7757) |
@@ -94,10 +95,10 @@ I go after the bugs that survive code review because everything still *looks* fi
 
 | project | what i shipped | pr |
 |---|---|---|
+| **microsoft/agent-framework** | terminate chat completions SSE stream with data: [DONE] | [#8532](https://github.com/microsoft/agent-framework/pull/8532) |
 | **ag-ui-protocol/ag-ui** | use the canonical A2UI v0.9 basic catalog ID in .NET | [#2771](https://github.com/ag-ui-protocol/ag-ui/pull/2771) |
 | **microsoft/agent-framework** | consolidate in-memory agent session storage in .NET | [#8417](https://github.com/microsoft/agent-framework/pull/8417) |
 | **microsoft/agent-framework** | validate declarative message properties; tighten strict skill script schemas | [#8119](https://github.com/microsoft/agent-framework/pull/8119) · [#8120](https://github.com/microsoft/agent-framework/pull/8120) |
-| **MicrosoftDocs/azure-ai-docs** | clarify declarative workflow response events | [#838](https://github.com/MicrosoftDocs/azure-ai-docs/pull/838) |
 | **google-research/tabfm** | cast float64 targets before the device move; ship the `safetensors` extra | [#74](https://github.com/google-research/tabfm/pull/74) · [#75](https://github.com/google-research/tabfm/pull/75) |
 | **ibm-self-serve-assets/SuperKnowa** | repair the PDF retriever notebooks | [#22](https://github.com/ibm-self-serve-assets/SuperKnowa/pull/22) · [#23](https://github.com/ibm-self-serve-assets/SuperKnowa/pull/23) |
 <!-- upstream:end -->
