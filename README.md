@@ -91,10 +91,11 @@ I go after the bugs that survive code review because everything still *looks* fi
 
 <sub>plus six smaller docs, README and dependency fixes across <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3ANVIDIA">NVIDIA/GenerativeAIExamples</a>, <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3AAIAnytime">AIAnytime</a> and <a href="https://github.com/collabnix/dockerbangalore/pull/68">collabnix/dockerbangalore</a>.</sub>
 
-**in review — 11 signals out**
+**in review — 12 signals out**
 
 | project | what i shipped | pr |
 |---|---|---|
+| **microsoft/agent-framework** | stop FileSystemAgentFileStore writing a UTF-8 byte order mark | [#8568](https://github.com/microsoft/agent-framework/pull/8568) |
 | **microsoft/agent-framework** | terminate chat completions SSE stream with data: [DONE] | [#8532](https://github.com/microsoft/agent-framework/pull/8532) |
 | **ag-ui-protocol/ag-ui** | use the canonical A2UI v0.9 basic catalog ID in .NET | [#2771](https://github.com/ag-ui-protocol/ag-ui/pull/2771) |
 | **microsoft/agent-framework** | consolidate in-memory agent session storage in .NET | [#8417](https://github.com/microsoft/agent-framework/pull/8417) |
