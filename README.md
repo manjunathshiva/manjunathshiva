@@ -91,10 +91,11 @@ I go after the bugs that survive code review because everything still *looks* fi
 
 <sub>plus six smaller docs, README and dependency fixes across <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3ANVIDIA">NVIDIA/GenerativeAIExamples</a>, <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3AAIAnytime">AIAnytime</a> and <a href="https://github.com/collabnix/dockerbangalore/pull/68">collabnix/dockerbangalore</a>.</sub>
 
-**in review — 14 signals out**
+**in review — 15 signals out**
 
 | project | what i shipped | pr |
 |---|---|---|
+| **microsoft/agent-framework** | stop the MCP lifecycle owner after a failed connect | [#8755](https://github.com/microsoft/agent-framework/pull/8755) |
 | **dotnet/extensions** | make the default tool-rejection message state that the decision is final | [#7784](https://github.com/dotnet/extensions/pull/7784) |
 | **microsoft/agent-framework** | add a MongoDB agent RAG sample | [#8725](https://github.com/microsoft/agent-framework/pull/8725) |
 | **microsoft/agent-framework** | stop FileSystemAgentFileStore writing a UTF-8 byte order mark | [#8568](https://github.com/microsoft/agent-framework/pull/8568) |
