@@ -66,10 +66,12 @@ A preserved mirror of Microsoft's removed repo-exploration subagent ([arXiv 2606
 I go after the bugs that survive code review because everything still *looks* fine: a conversion boundary that silently drops a field. A good share of what's below is that same bug wearing different clothes — and each fix ships with the regression test that keeps it dead.
 
 <!-- upstream:start -->
-**merged — 25 upstream**
+**merged — 27 upstream**
 
 | project | what shipped | pr |
 |---|---|---|
+| **microsoft/agent-framework** | add a MongoDB agent RAG sample | [#8725](https://github.com/microsoft/agent-framework/pull/8725) |
+| **microsoft/agent-framework** | stop the MCP lifecycle owner after a failed connect | [#8755](https://github.com/microsoft/agent-framework/pull/8755) |
 | **MicrosoftDocs/azure-ai-docs** | clarify declarative workflow response events | [#838](https://github.com/MicrosoftDocs/azure-ai-docs/pull/838) |
 | **microsoft/agent-framework** | keep agent compaction config when `HandoffBuilder` clones participants | [#8329](https://github.com/microsoft/agent-framework/pull/8329) |
 | **microsoft/agent-framework** | parse Responses `function_call_output` so hosted tool results survive | [#8078](https://github.com/microsoft/agent-framework/pull/8078) |
@@ -91,13 +93,11 @@ I go after the bugs that survive code review because everything still *looks* fi
 
 <sub>plus six smaller docs, README and dependency fixes across <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3ANVIDIA">NVIDIA/GenerativeAIExamples</a>, <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3AAIAnytime">AIAnytime</a> and <a href="https://github.com/collabnix/dockerbangalore/pull/68">collabnix/dockerbangalore</a>.</sub>
 
-**in review — 15 signals out**
+**in review — 13 signals out**
 
 | project | what i shipped | pr |
 |---|---|---|
-| **microsoft/agent-framework** | stop the MCP lifecycle owner after a failed connect | [#8755](https://github.com/microsoft/agent-framework/pull/8755) |
 | **dotnet/extensions** | make the default tool-rejection message state that the decision is final | [#7784](https://github.com/dotnet/extensions/pull/7784) |
-| **microsoft/agent-framework** | add a MongoDB agent RAG sample | [#8725](https://github.com/microsoft/agent-framework/pull/8725) |
 | **microsoft/agent-framework** | stop FileSystemAgentFileStore writing a UTF-8 byte order mark | [#8568](https://github.com/microsoft/agent-framework/pull/8568) |
 | **microsoft/agent-framework** | terminate chat completions SSE stream with data: [DONE] | [#8532](https://github.com/microsoft/agent-framework/pull/8532) |
 | **ag-ui-protocol/ag-ui** | use the canonical A2UI v0.9 basic catalog ID in .NET | [#2771](https://github.com/ag-ui-protocol/ag-ui/pull/2771) |
