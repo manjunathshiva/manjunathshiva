@@ -39,6 +39,9 @@ The through-line: take something that supposedly needs a datacenter, and land it
     </td>
     <td width="58%" valign="top">
 
+**[opendecider](https://github.com/manjunathshiva/opendecider)** · Python · [docs](https://manjunathshiva.github.io/opendecider/)<br/>
+Open, calibrated decision models from 400M to 80B: ask typed questions about any text or JSON and get a probability for every option instead of generated text. The 400M one answers in 17 ms on a GPU and still runs fine on a CPU; the 4B runs in LM Studio and Ollama. Measured head to head against TypeSafe Jev, Laya and frontier LLMs, on the same questions with the same scorer.
+
 **[femtoclaw](https://github.com/manjunathshiva/femtoclaw)** · C<br/>
 The world's smallest AI agent. A full tool-calling loop in pure C on a \$4 ESP32, inside ~120 KB of RAM — no allocator games, no RTOS scheduler to hide behind.
 
