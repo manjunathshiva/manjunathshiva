@@ -69,14 +69,13 @@ A preserved mirror of Microsoft's removed repo-exploration subagent ([arXiv 2606
 I go after the bugs that survive code review because everything still *looks* fine: a conversion boundary that silently drops a field. A good share of what's below is that same bug wearing different clothes — and each fix ships with the regression test that keeps it dead.
 
 <!-- upstream:start -->
-**merged — 28 upstream**
+**merged — 27 upstream**
 
 | project | what shipped | pr |
 |---|---|---|
 | **dotnet/extensions** | make the default tool-rejection message state that the decision is final | [#7784](https://github.com/dotnet/extensions/pull/7784) |
 | **microsoft/agent-framework** | add a MongoDB agent RAG sample | [#8725](https://github.com/microsoft/agent-framework/pull/8725) |
 | **microsoft/agent-framework** | stop the MCP lifecycle owner after a failed connect | [#8755](https://github.com/microsoft/agent-framework/pull/8755) |
-| **MicrosoftDocs/azure-ai-docs** | clarify declarative workflow response events | [#838](https://github.com/MicrosoftDocs/azure-ai-docs/pull/838) |
 | **microsoft/agent-framework** | keep agent compaction config when `HandoffBuilder` clones participants | [#8329](https://github.com/microsoft/agent-framework/pull/8329) |
 | **microsoft/agent-framework** | parse Responses `function_call_output` so hosted tool results survive | [#8078](https://github.com/microsoft/agent-framework/pull/8078) |
 | **microsoft/agent-framework** | make concurrent `FileCheckpointStorage` saves stop racing | [#7757](https://github.com/microsoft/agent-framework/pull/7757) |
