@@ -69,10 +69,11 @@ A preserved mirror of Microsoft's removed repo-exploration subagent ([arXiv 2606
 I go after the bugs that survive code review because everything still *looks* fine: a conversion boundary that silently drops a field. A good share of what's below is that same bug wearing different clothes — and each fix ships with the regression test that keeps it dead.
 
 <!-- upstream:start -->
-**merged — 27 upstream**
+**merged — 28 upstream**
 
 | project | what shipped | pr |
 |---|---|---|
+| **microsoft/agent-framework** | terminate chat completions SSE stream with data: [DONE] | [#8532](https://github.com/microsoft/agent-framework/pull/8532) |
 | **dotnet/extensions** | make the default tool-rejection message state that the decision is final | [#7784](https://github.com/dotnet/extensions/pull/7784) |
 | **microsoft/agent-framework** | add a MongoDB agent RAG sample | [#8725](https://github.com/microsoft/agent-framework/pull/8725) |
 | **microsoft/agent-framework** | stop the MCP lifecycle owner after a failed connect | [#8755](https://github.com/microsoft/agent-framework/pull/8755) |
@@ -96,13 +97,12 @@ I go after the bugs that survive code review because everything still *looks* fi
 
 <sub>plus six smaller docs, README and dependency fixes across <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3ANVIDIA">NVIDIA/GenerativeAIExamples</a>, <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3AAIAnytime">AIAnytime</a> and <a href="https://github.com/collabnix/dockerbangalore/pull/68">collabnix/dockerbangalore</a>.</sub>
 
-**in review — 13 signals out**
+**in review — 12 signals out**
 
 | project | what i shipped | pr |
 |---|---|---|
 | **microsoft/agent-framework** | add NVIDIA NIM embedding client package | [#8920](https://github.com/microsoft/agent-framework/pull/8920) |
 | **microsoft/agent-framework** | stop FileSystemAgentFileStore writing a UTF-8 byte order mark | [#8568](https://github.com/microsoft/agent-framework/pull/8568) |
-| **microsoft/agent-framework** | terminate chat completions SSE stream with data: [DONE] | [#8532](https://github.com/microsoft/agent-framework/pull/8532) |
 | **ag-ui-protocol/ag-ui** | use the canonical A2UI v0.9 basic catalog ID in .NET | [#2771](https://github.com/ag-ui-protocol/ag-ui/pull/2771) |
 | **microsoft/agent-framework** | consolidate in-memory agent session storage in .NET | [#8417](https://github.com/microsoft/agent-framework/pull/8417) |
 | **microsoft/agent-framework** | validate declarative message properties; tighten strict skill script schemas | [#8119](https://github.com/microsoft/agent-framework/pull/8119) · [#8120](https://github.com/microsoft/agent-framework/pull/8120) |
