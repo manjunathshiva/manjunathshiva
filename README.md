@@ -97,10 +97,11 @@ I go after the bugs that survive code review because everything still *looks* fi
 
 <sub>plus six smaller docs, README and dependency fixes across <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3ANVIDIA">NVIDIA/GenerativeAIExamples</a>, <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3AAIAnytime">AIAnytime</a> and <a href="https://github.com/collabnix/dockerbangalore/pull/68">collabnix/dockerbangalore</a>.</sub>
 
-**in review — 12 signals out**
+**in review — 13 signals out**
 
 | project | what i shipped | pr |
 |---|---|---|
+| **anthropics/oss-scanner** | enrol turboquant-mlx | [#703](https://github.com/anthropics/oss-scanner/pull/703) |
 | **microsoft/agent-framework** | add NVIDIA NIM embedding client package | [#8920](https://github.com/microsoft/agent-framework/pull/8920) |
 | **microsoft/agent-framework** | stop FileSystemAgentFileStore writing a UTF-8 byte order mark | [#8568](https://github.com/microsoft/agent-framework/pull/8568) |
 | **ag-ui-protocol/ag-ui** | use the canonical A2UI v0.9 basic catalog ID in .NET | [#2771](https://github.com/ag-ui-protocol/ag-ui/pull/2771) |
