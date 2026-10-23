@@ -97,7 +97,7 @@ I go after the bugs that survive code review because everything still *looks* fi
 
 <sub>plus six smaller docs, README and dependency fixes across <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3ANVIDIA">NVIDIA/GenerativeAIExamples</a>, <a href="https://github.com/pulls?q=is%3Apr+author%3Amanjunathshiva+org%3AAIAnytime">AIAnytime</a> and <a href="https://github.com/collabnix/dockerbangalore/pull/68">collabnix/dockerbangalore</a>.</sub>
 
-**in review — 12 signals out**
+**in review — 10 signals out**
 
 | project | what i shipped | pr |
 |---|---|---|
@@ -107,7 +107,6 @@ I go after the bugs that survive code review because everything still *looks* fi
 | **microsoft/agent-framework** | consolidate in-memory agent session storage in .NET | [#8417](https://github.com/microsoft/agent-framework/pull/8417) |
 | **microsoft/agent-framework** | validate declarative message properties; tighten strict skill script schemas | [#8119](https://github.com/microsoft/agent-framework/pull/8119) · [#8120](https://github.com/microsoft/agent-framework/pull/8120) |
 | **google-research/tabfm** | cast float64 targets before the device move; ship the `safetensors` extra | [#74](https://github.com/google-research/tabfm/pull/74) · [#75](https://github.com/google-research/tabfm/pull/75) |
-| **ibm-self-serve-assets/SuperKnowa** | repair the PDF retriever notebooks | [#22](https://github.com/ibm-self-serve-assets/SuperKnowa/pull/22) · [#23](https://github.com/ibm-self-serve-assets/SuperKnowa/pull/23) |
 <!-- upstream:end -->
 
 ## 03 · bench
