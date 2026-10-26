@@ -3,7 +3,7 @@
 <rect width="1000" height="190" rx="10" fill="#0b0f14"/>
 <defs><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4dd0c1" stop-opacity="0.30"/><stop offset="1" stop-color="#4dd0c1" stop-opacity="0.02"/></linearGradient></defs>
 <text x="52" y="34" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#4dd0c1" text-anchor="start" letter-spacing="1.4">52-week contribution trace</text>
-<text x="948" y="34" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#7d8da1" text-anchor="end">peak 138/wk · 701 total</text>
+<text x="948" y="34" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="11" font-weight="400" fill="#7d8da1" text-anchor="end">peak 138/wk · 689 total</text>
 <line x1="52" y1="150.0" x2="948" y2="150.0" stroke="#16212c"/>
 <text x="42" y="153.5" font-family="ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,monospace" font-size="9" font-weight="400" fill="#4e5d6e" text-anchor="end">0</text>
 <line x1="52" y1="106.0" x2="948" y2="106.0" stroke="#16212c"/>
